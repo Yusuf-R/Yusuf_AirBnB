@@ -379,6 +379,10 @@ class HBNBCommand(cmd.Cmd):
         print(cls_count)
         return
 
+    def help_count(self):
+        """Counts the number of instances of a class"""
+        print("""Counts the number of instances of a class""")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
