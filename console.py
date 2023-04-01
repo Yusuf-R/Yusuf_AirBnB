@@ -217,17 +217,21 @@ class HBNBCommand(cmd.Cmd):
             attr_val = grp.group(2)
             if attr_val[0] in ["\"", "\'"]:
                 attr_val = attr_val[1:-1]
-            if int(attr_val):
-                setattr(obj, attr_name, int(attr_val))
-                obj.save()
-                return
-            elif float(attr_val):
-                setattr(obj, attr_name, float(attr_val))
-                obj.save()
-                return
-            setattr(obj, attr_name, attr_val)
-            obj.save()
-            return
+            try:
+                if int(attr_val):
+                    setattr(obj, attr_name, int(attr_val))
+                    obj.save()
+                    return
+            except Exception:
+                try:
+                    if float(attr_val):
+                        setattr(obj, attr_name, float(attr_val))
+                        obj.save()
+                        return
+                except Exception:
+                    setattr(obj, attr_name, attr_val)
+                    obj.save()
+                    return
 
         elif grp_attr[0] in ["\"", "\'"]:
             pattern = r'["\']?([^"\']*)["\']?[,\s]*["\']?([^"\']*)["\']?'
@@ -241,17 +245,21 @@ class HBNBCommand(cmd.Cmd):
                 return
             attr_val = grp.group(2).strip()
             obj = stored_obj[stored_dict_key]
-            if int(attr_val):
-                setattr(obj, attr_name, int(attr_val))
-                obj.save()
-                return
-            if float(attr_val):
-                setattr(obj, attr_name, float(attr_val))
-                obj.save()
-                return
-            setattr(obj, attr_name, attr_val)
-            obj.save()
-            return
+            try:
+                if int(attr_val):
+                    setattr(obj, attr_name, int(attr_val))
+                    obj.save()
+                    return
+            except Exception:
+                try:
+                    if float(attr_val):
+                        setattr(obj, attr_name, float(attr_val))
+                        obj.save()
+                        return
+                except Exception:
+                    setattr(obj, attr_name, attr_val)
+                    obj.save()
+                    return
 
         elif grp_attr[0] == "{":
             json_ready = grp_attr
@@ -264,19 +272,18 @@ class HBNBCommand(cmd.Cmd):
                 attr_name = key
                 attr_val = value
                 obj = stored_obj[stored_dict_key]
-                if int(attr_val):
-                    setattr(obj, attr_name, int(attr_val))
-                    obj.save()
-                    continue
-                elif float(attr_val):
-                    setattr(obj, attr_name, float(attr_val))
-                    obj.save()
-                    continue
-                else:
-                    setattr(obj, attr_name, attr_val)
-                    obj.save()
-                    continue
-            return
+                try:
+                    if int(attr_val):
+                        setattr(obj, attr_name, int(attr_val))
+                        obj.save()
+                except Exception:
+                    try:
+                        if float(attr_val):
+                            setattr(obj, attr_name, float(attr_val))
+                            obj.save()
+                    except Exception:
+                        setattr(obj, attr_name, attr_val)
+                        obj.save()
 
     def help_update(self):
         """update the object attribute"""
