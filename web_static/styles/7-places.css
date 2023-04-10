@@ -1,29 +1,29 @@
 section.places h1 {
-        text-align: left;
-        font-size: 30x;
-        margin-bottom: 0px;        
+        font-size: 30px;
 }
 
-section.places h2 {
-        text-align:center;
-        font-size: 30x;        
-}
-
-div.x,
-div.y {
-        display: inline-block;
+.r0 {
+        display: inline-block; 
         border: 1px solid #FF5A5F;
-        margin-left: 5%;
-        width: 390px;
+        width: 390px; 
+        border-radius: 4px; 
+        padding: 20px;    
         margin: 20px;
-        padding: 20px;
-        border-radius: 4px;
+}
+.r0 h2 {
+        font-size: 30px;
+        text-align: center;
 }
 
-div.z {
+.r1 {
         border: 1px solid #FF5A5F;
         width:390px;
-        padding: 20px;
-        margin: 0 auto;
-        border-radius: 4px;              
+        border-radius: 4px;
+        padding: 20px;    
+        margin: 20px;
+        margin-left: 25%; 
+}
+.r1 h2 {
+        font-size: 30px;
+        text-align: center;
 }
