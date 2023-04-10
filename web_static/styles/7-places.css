@@ -1,29 +1,32 @@
+section.places {
+        display: block;
+        text-align: center;
+}
+
+
 section.places h1 {
         font-size: 30px;
+	text-align: left;
+        margin-left: 2%;
+        margin-bottom: 1%;
 }
 
-.r0 {
-        display: inline-block; 
-        border: 1px solid #FF5A5F;
-        width: 390px; 
-        border-radius: 4px; 
-        padding: 20px;    
+.places article {
+        width: 390px;
+
+        padding: 20px;
         margin: 20px;
-}
-.r0 h2 {
-        font-size: 30px;
-        text-align: center;
-}
-
-.r1 {
         border: 1px solid #FF5A5F;
-        width:390px;
         border-radius: 4px;
-        padding: 20px;    
-        margin: 20px;
-        margin-left: 25%; 
+        
+        display: inline-block;
+        text-align: center;
+
 }
-.r1 h2 {
+
+.places article h2 {
         font-size: 30px;
         text-align: center;
+        padding: 0;
+        margin: auto;
 }
